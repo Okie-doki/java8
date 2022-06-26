@@ -34,6 +34,9 @@ public class Foo {
 
         System.out.println("plus10.andThen(multiply2) = "+plus10.andThen(multiply2).apply(2));
 
+        BiFunction<Integer, Integer, Integer> plusFunc = (i, j) -> i+j;
+        System.out.println("plusFunc = "+plusFunc.apply(2, 3));
+
         Consumer<Integer> printT = (i) -> System.out.println("pritnT = "+i);
         printT.accept(10);
 
@@ -52,6 +55,8 @@ public class Foo {
         UnaryOperator<Integer> multiply2Unary = (i) -> i*2;
         System.out.println("multiply2Unary = "+multiply2Unary.apply(2));
 
+        BinaryOperator<Integer> plusBinaryOperatorSample = (i, j) -> i+j;
+        System.out.println("plusBinaryOperatorSample = "+plusBinaryOperatorSample.apply(10,5));
 
     }
 }
